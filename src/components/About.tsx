@@ -4,6 +4,7 @@ import { Github, MapPin, Sparkles, Terminal, Mail, Compass, Clock } from 'lucide
 import { PERSONAL_BIO } from '../data';
 import { playBeep } from '../utils/sfx';
 import AvatarSVG from './AvatarSVG';
+import avatarImg from '../../avatar.jpg';
 
 export default function About() {
   const [timeStr, setTimeStr] = useState('');
@@ -57,14 +58,14 @@ export default function About() {
               <div className="w-full h-full transition-all duration-300 transform group-hover:scale-105 flex items-center justify-center">
                 {!imageError ? (
                   <img
-                    src="avatar.jpg"
+                    src={avatarImg}
                     alt={PERSONAL_BIO.name}
                     referrerPolicy="no-referrer"
                     onError={() => {
                       console.log("Locally uploaded avatar.jpg not found, falling back to fully compliant styled vector SVG.");
                       setImageError(true);
                     }}
-                    className="w-full h-full object-cover group-hover:contrast-110 transition-all duration-300"
+                    className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
                   />
                 ) : (
                   <AvatarSVG />
