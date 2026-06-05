@@ -17,14 +17,13 @@ export default function TerminalShell() {
   ]);
   const consoleBottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const isInitial = useRef(true);
+  const prevLengthRef = useRef(logs.length);
 
   useEffect(() => {
-    if (isInitial.current) {
-      isInitial.current = false;
-      return;
+    if (logs.length > prevLengthRef.current) {
+      consoleBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-    consoleBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    prevLengthRef.current = logs.length;
   }, [logs]);
 
   const commandButtons = ['help', 'whoami', 'skills', 'projects', 'secrets', 'clear'];
