@@ -1,0 +1,6 @@
+{
+  "name": "Yugen Portfolio",
+  "description": "A developer-friendly neo-brutalist portfolio replica of Yugen Portfolio, featuring interactive widgets, scroll animations, and terminal command interfaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

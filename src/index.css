@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+}
+
+/* Custom Neo-brutalist Utility Classes */
+.brutal-border {
+  border: 4px solid #000000;
+}
+
+.brutal-border-sm {
+  border: 2px solid #000000;
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+/* Color theme mappings */
+.theme-yellow {
+  background-color: #fef08a; /* bg-yellow-200 */
+}
+.theme-cyan {
+  background-color: #a5f3fc; /* bg-cyan-200 */
+}
+.theme-pink {
+  background-color: #fbcfe8; /* bg-pink-200 */
+}
+.theme-lime {
+  background-color: #d9f99d; /* bg-lime-200 */
+}
+.theme-violet {
+  background-color: #e9d5ff; /* bg-purple-200 */
+}
+.theme-orange {
+  background-color: #fed7aa; /* bg-orange-200 */
+}
+
+/* Scrollbar behaviors */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* bg-gray-100 */
+  border-left: 4px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151; /* bg-gray-700 */
+}
+
+/* Glitch effect scanner */
+.scanline-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline-container::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Dots Grid Background */
+.bg-dots-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, #ddd 1.5px, transparent 1.5px);
+}
+
+.bg-dots-pattern-dark {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, #333 1.5px, transparent 1.5px);
+}
