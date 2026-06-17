@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Volume2, VolumeX, Menu, X, Command, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, Command, Sparkles, Moon, Sun } from 'lucide-react';
 import { playBeep, toggleGlobalMute, isMuted } from '../utils/sfx';
+import { useDarkMode } from '../hooks/useDarkMode';
 
 interface NavbarProps {
   activeSection: string;
